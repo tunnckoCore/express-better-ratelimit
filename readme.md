@@ -8,8 +8,6 @@
 $ npm install express-better-ratelimit
 ```
 
-## Features
-- 
 
 ## Options
 > With options through init you can control black/white lists, limit per ip and reset interval.

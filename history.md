@@ -1,3 +1,6 @@
+## v1.0.1 / October 27, 2014
+- update readme, github
+
 ## v1.0.0 / October 27, 2014
 - initial release
 
