@@ -1,0 +1,48 @@
+{
+  "name": "express-better-ratelimit",
+  "version": "2.0.1",
+  "description": "Express.js request rate limit middleware by IP with MemoryStore",
+  "main": "index.js",
+  "scripts": {
+    "lint": "npm install && ./node_modules/.bin/jshint ./*.js",
+    "test": "npm run lint && NODE_ENV=test ./node_modules/.bin/mocha",
+    "test-cov": "npm test && NODE_ENV=test node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha",
+    "test-travis": "npm test && NODE_ENV=test node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly"
+  },
+  "author": {
+    "name": "Charlike Make Reagent",
+    "email": "mameto_100@mail.bg",
+    "url": "https://github.com/tunnckoCore",
+    "twitter": "https://twitter.com/tunnckoCore"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tunnckoCore/express-better-ratelimit.git"
+  },
+  "keywords": [
+    "express",
+    "middleware",
+    "ratelimit",
+    "requestlimit",
+    "limit",
+    "in-memory",
+    "memorystore",
+    "rate"
+  ],
+  "dependencies": {
+    "ipchecker": "*"
+  },
+  "devDependencies": {
+    "coveralls": "*",
+    "istanbul": "*",
+    "jshint": "*",
+    "express": ">=4",
+    "mocha": ">=2",
+    "mocha-lcov-reporter": "*",
+    "supertest": "*"
+  },
+  "licenses": [{
+    "type": "MIT",
+    "url": "https://github.com/tunnckoCore/express-better-ratelimit/blob/master/license.md"
+  }]
+}
