@@ -1,6 +1,6 @@
 {
   "name": "express-better-ratelimit",
-  "version": "2.0.1",
+  "version": "1.0.0",
   "description": "Express.js request rate limit middleware by IP with MemoryStore",
   "main": "index.js",
   "scripts": {
