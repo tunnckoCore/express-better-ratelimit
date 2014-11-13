@@ -1,0 +1,14 @@
+# Always-ignore dirs #
+######################
+_gh_pages
+node_modules
+bower_components
+components
+vendor
+build
+lib-cov
+coverage
+nbproject
+cache
+temp
+tmp

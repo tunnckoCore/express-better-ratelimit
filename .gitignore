@@ -1,31 +1,11 @@
-# Numerous always-ignore extensions
-*~
-*.csv
-*.dat
-*.diff
-*.err
-*.gz
-*.log
-*.orig
-*.out
-*.pid
-*.rar
-*.rej
-*.seed
-*.swo
-*.swp
-*.vi
-*.yo-rc.json
-*.zip
-*.coveralls.yml
-*.idea
-
-# Always-ignore dirs and files
+# Always-ignore dirs #
+######################
 _gh_pages
 node_modules
 bower_components
 components
 vendor
+build
 lib-cov
 coverage
 nbproject
@@ -33,5 +13,29 @@ cache
 temp
 tmp
 
-npm-debug.log
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# OS, Logs and databases #
+##########################
+*.pid
+*.dat
+*.log
+*.sql
+*.sqlite
+*~
+~*
+
+# Another files #
+#################
+.DS_Store
 Thumbs.db
+npm-debug.log
