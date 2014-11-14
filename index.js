@@ -47,10 +47,6 @@ module.exports = function betterlimit(options) {
   return function ratelimit(req, res, next) {
     var ip = options.env === 'test' ? req.headers['x-expressip'] : req.ip;
 
-    if (!ip) {
-      return next();
-    }
-
     if (ipchecker.check(ip, blackListMap)) {
       res.status(403).send(options.message_403)
       return;
@@ -87,7 +83,6 @@ module.exports = function betterlimit(options) {
       return;
     }
 
-    //console.log(res)
     return next();
   };
 }
