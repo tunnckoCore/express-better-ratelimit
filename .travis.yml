@@ -1,5 +1,5 @@
 language: 'node_js'
 node_js:
   - '0.10'
-script: "unit-coverage run -r lcov -s 'index.js' -t 'test.js' -o lcov.info"
+script: "npm i unit-coverage && unit-coverage run -r lcov -s 'index.js' -t 'test.js' -o lcov.info"
 after_script: "cat lcov.info | coveralls"
