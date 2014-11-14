@@ -1,3 +1,7 @@
+## v1.0.2 / November 14, 2014
+- add more dotfiles, lol
+- clean unnessecery `if`
+
 ## v1.0.1 / October 27, 2014
 - update readme, github
 
