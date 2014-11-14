@@ -4,10 +4,10 @@
   "description": "Express.js request rate limit middleware by IP with MemoryStore",
   "main": "index.js",
   "scripts": {
-    "lint": "npm install && jshint .",
-    "test": "npm run lint && mocha",
-    "test-cov": "npm test && node_modules/.bin/istanbul cover _mocha",
-    "test-travis": "npm test && node_modules/.bin/istanbul cover _mocha --report lcovonly"
+    "lint": "npm install && node_modules/.bin/jshint .",
+    "test": "npm run lint && node_modules/.bin/mocha",
+    "test-cov": "npm run lint && node_modules/.bin/istanbul cover node_modules/.bin/_mocha",
+    "test-travis": "npm run lint && node_modules/.bin/istanbul cover node_modules/.bin/_mocha --report lcovonly && cat coverage/lcov.info | node_modules/.bin/coveralls"
   },
   "author": {
     "name": "Charlike Make Reagent",
@@ -34,9 +34,9 @@
   },
   "devDependencies": {
     "coveralls": "*",
-    "istanbul": "*",
-    "jshint": "*",
     "express": ">=4",
+    "jshint": "*",
+    "istanbul": "*",
     "mocha": ">=2",
     "mocha-lcov-reporter": "*",
     "supertest": "*"

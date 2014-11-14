@@ -1,20 +1,24 @@
-install:
-	npm install
+MOCHA     = node_modules/.bin/mocha
+_MOCHA    = node_modules/.bin/_mocha
+JSHINT    = node_modules/.bin/jshint
+ISTANBUL  = node_modules/.bin/istanbul
+COVERALLS = node_modules/.bin/coveralls
 
 lint:
-	$(MAKE) install
-	./node_modules/.bin/jshint ./*.js
+	npm install
+	${JSHINT} .
 
-test:
-	$(MAKE) lint
-	@NODE_ENV=test ./node_modules/.bin/mocha
+test: lint
+	${MOCHA}
 
-test-cov:
-	$(MAKE) test
-	@NODE_ENV=test node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha
+test-cov: lint
+	${ISTANBUL} cover ${_MOCHA}
 
-test-travis:
-	$(MAKE) test
-	@NODE_ENV=test node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly
+test-travis: lint
+	${ISTANBUL} cover ${_MOCHA} --report lcovonly
+	cat coverage/lcov.info | ${COVERALLS}
 
-.PHONY: test lint
+clean: node_modules
+	rm -rf node_modules coverage
+
+.PHONY: lint test clean

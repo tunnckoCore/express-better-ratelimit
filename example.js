@@ -10,7 +10,6 @@
 var express = require('express')
 var limit = require('./index')
 
-
 var app = express()
 
 app.use(limit({
