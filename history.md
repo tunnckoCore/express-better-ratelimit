@@ -1,3 +1,6 @@
+## v1.1.1 / November 27, 2014
+- edit code style collisions
+
 ## v1.1.0 / November 27, 2014
 - enforce new code style
   - add jshint, jshintignore, jscs (using jscs-jsdoc)
