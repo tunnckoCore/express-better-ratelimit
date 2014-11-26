@@ -11,17 +11,16 @@
  * Module dependencies.
  */
 
-var express = require('express')
-var limit = require('./index')
-var request = require('supertest')
+var express = require('express');
+var limit = require('./index');
+var request = require('supertest');
 var PORT = 3333;
 
 function hello(req, res, next) {
-  res.set('Content-Type', 'text/html')
-  res.status(200).send('<p>Hello test.</p>')
+  res.set('Content-Type', 'text/html');
+  res.status(200).send('<p>Hello test.</p>');
   next();
 }
-
 
 /**
  * app with non-default options
@@ -36,8 +35,8 @@ appNonDefault
   .use(hello)
   .listen(PORT++);
 
-describe('app with non-default options', function () {
-  it('should status 200 - 1.2.3.4 - remaining 2/3', function (done) {
+describe('app with non-default options', function() {
+  it('should status 200 - 1.2.3.4 - remaining 2/3', function(done) {
     request(appNonDefault)
     .get('/')
     .set('x-expressip', '1.2.3.4')
@@ -46,7 +45,7 @@ describe('app with non-default options', function () {
     .expect('X-RateLimit-Remaining', '2')
     .end(done);
   });
-  it('should status 200 - 1.2.3.4 - remaining 1/3', function (done) {
+  it('should status 200 - 1.2.3.4 - remaining 1/3', function(done) {
     request(appNonDefault)
     .get('/')
     .set('x-expressip', '1.2.3.4')
@@ -55,7 +54,7 @@ describe('app with non-default options', function () {
     .expect('X-RateLimit-Remaining', '1')
     .end(done);
   });
-  it('should status 200 - 1.2.3.4 - remaining 0/3', function (done) {
+  it('should status 200 - 1.2.3.4 - remaining 0/3', function(done) {
     request(appNonDefault)
     .get('/')
     .set('x-expressip', '1.2.3.4')
@@ -64,7 +63,7 @@ describe('app with non-default options', function () {
     .expect('X-RateLimit-Remaining', '0')
     .end(done);
   });
-  it('should status 429 - 1.2.3.4 - remaining 0/3 /1', function (done) {
+  it('should status 429 - 1.2.3.4 - remaining 0/3 /1', function(done) {
     request(appNonDefault)
     .get('/')
     .set('x-expressip', '1.2.3.4')
@@ -73,7 +72,7 @@ describe('app with non-default options', function () {
     .expect('X-RateLimit-Remaining', '0')
     .end(done);
   });
-  it('should status 200 - 8.8.8.8 - remaining 2/3', function (done) {
+  it('should status 200 - 8.8.8.8 - remaining 2/3', function(done) {
     request(appNonDefault)
     .get('/')
     .set('x-expressip', '8.8.8.8')
@@ -82,7 +81,7 @@ describe('app with non-default options', function () {
     .expect('X-RateLimit-Remaining', '2')
     .end(done);
   });
-  it('should status 200 - 8.8.8.8 - remaining 1/3', function (done) {
+  it('should status 200 - 8.8.8.8 - remaining 1/3', function(done) {
     request(appNonDefault)
     .get('/')
     .set('x-expressip', '8.8.8.8')
@@ -91,7 +90,7 @@ describe('app with non-default options', function () {
     .expect('X-RateLimit-Remaining', '1')
     .end(done);
   });
-  it('should status 429 - 1.2.3.4 - remaining 0/3 /2', function (done) {
+  it('should status 429 - 1.2.3.4 - remaining 0/3 /2', function(done) {
     request(appNonDefault)
     .get('/')
     .set('x-expressip', '1.2.3.4')
@@ -100,7 +99,7 @@ describe('app with non-default options', function () {
     .expect('X-RateLimit-Remaining', '0')
     .end(done);
   });
-  it('should status 200 - 8.8.8.8 - remaining 0/3', function (done) {
+  it('should status 200 - 8.8.8.8 - remaining 0/3', function(done) {
     request(appNonDefault)
     .get('/')
     .set('x-expressip', '8.8.8.8')
@@ -109,7 +108,7 @@ describe('app with non-default options', function () {
     .expect('X-RateLimit-Remaining', '0')
     .end(done);
   });
-  it('should status 429 - 8.8.8.8 - remaining 0/3', function (done) {
+  it('should status 429 - 8.8.8.8 - remaining 0/3', function(done) {
     request(appNonDefault)
     .get('/')
     .set('x-expressip', '8.8.8.8')
@@ -119,7 +118,6 @@ describe('app with non-default options', function () {
     .end(done);
   });
 });
-
 
 /**
  * app with blacklisted ips
@@ -134,8 +132,8 @@ appBlack
   .use(hello)
   .listen(PORT++);
 
-describe('app with blacklisted ips', function () {
-  it('should 403 Forbidden - blackList', function (done) {
+describe('app with blacklisted ips', function() {
+  it('should 403 Forbidden - blackList', function(done) {
     request(appBlack)
     .get('/')
     .set('x-expressip', '4.4.1.8')
@@ -143,7 +141,6 @@ describe('app with blacklisted ips', function () {
     .end(done);
   });
 });
-
 
 /**
  * app with whitelisted ips
@@ -158,8 +155,8 @@ appWhite
   .use(hello)
   .listen(PORT++);
 
-describe('app with whitelisted ips', function () {
-  it('should 200 OK - whiteList - no limits', function (done) {
+describe('app with whitelisted ips', function() {
+  it('should 200 OK - whiteList - no limits', function(done) {
     request(appWhite)
     .get('/')
     .set('x-expressip', '127.0.4.4')

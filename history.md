@@ -33,12 +33,4 @@
 [author-website]: http://www.whistle-bg.tk
 [author-npmjs]: https://npmjs.org/~tunnckocore
 
-[cobody-url]: https://github.com/tj/co-body
-[mocha-url]: https://github.com/tj/mocha
-[rawbody-url]: https://github.com/stream-utils/raw-body
-[multer-url]: https://github.com/expressjs/multer
 [express-url]: https://github.com/strongloop/express
-[formidable-url]: https://github.com/felixge/node-formidable
-[co-url]: https://github.com/tj/co
-[extend-url]: https://github.com/justmoon/node-extend
-[csp-report]: https://mathiasbynens.be/notes/csp-reports
