@@ -1,3 +1,13 @@
+## v1.1.0 / November 27, 2014
+- enforce new code style
+  - add jshint, jshintignore, jscs (using jscs-jsdoc)
+  - normalizing all @tunnckoCore packages
+  - add/edit dotfiles 
+- option `message_429` deprecated, it will be removed in **v1.2.x**, use `accessLimited`
+- option `message_403` deprecated, it will be removed in **v1.2.x**, use `accessForbidden`
+- _>=v1.2.x jscs: "requireCamelCaseOrUpperCaseIdentifiers: true"_
+- _>=v1.2.x jshint: "camelcase: true"_
+
 ## v1.0.2 / November 14, 2014
 - add more dotfiles, lol
 - clean unnessecery `if`
