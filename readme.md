@@ -2,6 +2,8 @@
 > [Express.js][express-url] request rate limit middleware by IP with MemoryStore
 
 
+### [upcoming v2](https://github.com/tunnckoCore/express-better-ratelimit/milestones/v2) soon
+
 ## Install [![Nodei.co stats][npmjs-install]][npmjs-url]
 > Install with [npm](https://npmjs.org)
 
